@@ -1,9 +1,7 @@
-weather_package/
-│
-├── weather_package/
+.
+├── src
 │   ├── __init__.py
 │   ├── api.py
-│   └── visualization.py
-│
-├── setup.py
-└── requirements.txt
+├── tests
+│   ├── conftest.py
+│   ├── test_weather_api.py
