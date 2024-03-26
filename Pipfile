@@ -9,6 +9,7 @@ build = "*"
 requests = "*"
 matplotlib.pyplot = "*"
 numpy = "*"
+dotenv = "*"
 pyweath = {file = ".", editable = true}
 
 [dev-packages]
