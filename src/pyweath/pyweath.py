@@ -44,17 +44,15 @@ def fiveday_forecast_city(city):
         
         see_graph = input("Would you like to see the graph? (y/n): ")
         if see_graph.lower() == "y":
-            # Plotting temperature changes
-            plt.figure(figsize=(10, 6))  # Adjust the figure size
+            plt.figure(figsize=(10, 6))  
             
-            # Customize the line style and color
             plt.plot(temps, color='blue', linestyle='-', linewidth=2)
             plt.grid(True, linestyle='--', alpha=0.5)
-            plt.xlabel('Hours from current time (5-days)', fontsize=12)  # Modify x-axis label
+            plt.xlabel('Hours from current time (5-days)', fontsize=12)  
             plt.ylabel('Temperature (°C)', fontsize=12)
-            plt.title('Temperature Changes Over Next 5 Day Forecast', fontsize=14)  # Modify title
-            hours = np.arange(0, len(temps), 3)  # Show ticks every 3 hours
-            plt.xticks(hours, [3 + i*3 for i in hours])  # Modify x-axis ticks
+            plt.title('Temperature Changes Over Next 5 Day Forecast', fontsize=14) 
+            hours = np.arange(0, len(temps), 3)  # show ticks every 3 hours
+            plt.xticks(hours, [3 + i*3 for i in hours])  
             
             plt.yticks(np.arange(min(temps), max(temps)+1, 5))
             plt.legend(['Temperature'], loc='upper right')
@@ -69,7 +67,7 @@ def fiveday_forecast_city(city):
 
 def get_today_airqual_city(city):
     """
-    Retrieve today's air quality for a specificied city.
+    Retrieve today's air quality for a specificied city, uses Geocoder API to locate coordinates.
     """
     try:
         geo = f"http://api.openweathermap.org/geo/1.0/direct?q={city}&appid={api_key}"

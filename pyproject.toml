@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "PyWeath"
+version = "0.0.1"
+description = "A simple weather library for Python."
+keywords = ["weather", "temperature", "forecast", "air quality", "owm"]
+license = {file = "LICENSE"}
+readme = {file = "README.md"}
+requires-python = ">=3.7"
+authors = [
+    {name = "Jean Luis Adrover", email = "ja4146@nyu.edu"},
+    {name = "Harry (Sang In) Kang", email = "sik247@nyu.edu"},
+    
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.urls]
+"Homepage" = "https://github.com/software-students-spring2024/3-python-package-exercise-team-pyday"
+
+[project.scripts]
+pyewath = "pyweath.__main__:main"

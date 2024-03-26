@@ -1,4 +1,4 @@
-from src.pyweath import *
+from src.pyweath.pyweath import *
 
 example_lat, example_lon = 40.7128, -74.0060
 print(get_todays_forecast_ll(example_lat, example_lon))
