@@ -1,15 +1,19 @@
 from .pyweath import *
 
 def main():
-    example_lat, example_lon = 40.7128, -74.0060
-    print(get_todays_forecast_ll(example_lat, example_lon))
+    try:
+        example_lat, example_lon = input("Enter latitude and longitude separated by a comma: ").split(",")
+        print(get_todays_forecast_ll(example_lat, example_lon))
+    except:
+        print("Invalid input.")
 
-    example_city = "Dubai"
-    print(get_todays_forecast_city(example_city))
-
-    fiveday_forecast_city(example_city)
-
-    print(get_today_airqual_city(example_city))
+    try:
+        example_city = input("Enter city: ")
+        print(get_todays_forecast_city(example_city))
+        fiveday_forecast_city(example_city)
+        print(get_today_airqual_city(example_city))
+    except:
+        print("Invalid input.")    
 
 if __name__ == "__main__":
     main()
