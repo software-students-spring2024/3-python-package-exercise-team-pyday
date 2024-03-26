@@ -1,5 +1,5 @@
 import os
-from src.api import WeatherAPI
+from src.pyweath import WeatherAPI
 
 def test_get_current_weather():
     api_key = os.getenv('OPENWEATHERMAP_API_KEY')
