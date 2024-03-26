@@ -7,7 +7,7 @@ An exercise to create a Python package, build it, test it, distribute it, and us
 
 ### Getting an API Key
 
-1. Sign up for an OpenWeatherMap account and obtain an API key.
+1. Sign up for the free version of an OpenWeatherMap account and obtain an API key.
 2. Set an environment variable on your system to store this key:
 
    - On Linux/macOS: `export OPENWEATHERMAP_API_KEY='your_api_key_here'`
