@@ -39,17 +39,17 @@ class WeatherAPI:
         weather_data = self.get_weather_data(lat, lon)
         return weather_data['daily']
 
-    def plot_temperature(self, lat, lon):
-        """
-        Plot the hourly temperature forecast for a specific location.
-        """
-        weather_data = self.get_weather_data(lat, lon)
-        temperatures = [hour['temp'] for hour in weather_data['hourly']]
-        plt.plot(temperatures)
-        plt.xlabel('Hour')
-        plt.ylabel('Temperature (°C)')
-        plt.title('Hourly Temperature Forecast')
-        plt.show()
+    # def plot_temperature(self, lat, lon):
+    #     """
+    #     Plot the hourly temperature forecast for a specific location.
+    #     """
+    #     weather_data = self.get_weather_data(lat, lon)
+    #     temperatures = [hour['temp'] for hour in weather_data['hourly']]
+    #     plt.plot(temperatures)
+    #     plt.xlabel('Hour')
+    #     plt.ylabel('Temperature (°C)')
+    #     plt.title('Hourly Temperature Forecast')
+    #     plt.show()
 
 x = WeatherAPI()
 print(x.get_current_weather(37.7749, -122.4194))
