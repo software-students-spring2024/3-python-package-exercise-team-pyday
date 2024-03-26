@@ -33,7 +33,7 @@ def get_todays_forecast_city(city):
         return "City not found, please try again."
 
 
-def display_fiveday_temps_city(city):
+def fiveday_forecast_city(city):
     """
     Retrieve five day weather forecast for a specificied city.
     """
@@ -42,28 +42,49 @@ def display_fiveday_temps_city(city):
         weather_data = requests.get(url).json()
         temps = [hour["main"]["temp"] for hour in weather_data["list"]]
         
-        # Plotting temperature changes
-        plt.figure(figsize=(10, 6))  # Adjust the figure size
+        see_graph = input("Would you like to see the graph? (y/n): ")
+        if see_graph.lower() == "y":
+            # Plotting temperature changes
+            plt.figure(figsize=(10, 6))  # Adjust the figure size
+            
+            # Customize the line style and color
+            plt.plot(temps, color='blue', linestyle='-', linewidth=2)
+            plt.grid(True, linestyle='--', alpha=0.5)
+            plt.xlabel('Hours from current time (5-days)', fontsize=12)  # Modify x-axis label
+            plt.ylabel('Temperature (°C)', fontsize=12)
+            plt.title('Temperature Changes Over Next 5 Day Forecast', fontsize=14)  # Modify title
+            hours = np.arange(0, len(temps), 3)  # Show ticks every 3 hours
+            plt.xticks(hours, [3 + i*3 for i in hours])  # Modify x-axis ticks
+            
+            plt.yticks(np.arange(min(temps), max(temps)+1, 5))
+            plt.legend(['Temperature'], loc='upper right')
+            
+            plt.show()
         
-        # Customize the line style and color
-        plt.plot(temps, color='blue', linestyle='-', linewidth=2)
-        plt.grid(True, linestyle='--', alpha=0.5)
-        plt.xlabel('Hours from current time (5-days)', fontsize=12)  # Modify x-axis label
-        plt.ylabel('Temperature (°C)', fontsize=12)
-        plt.title('Temperature Changes Over Next 5 Day Forecast', fontsize=14)  # Modify title
-        hours = np.arange(0, len(temps), 3)  # Show ticks every 3 hours
-        plt.xticks(hours, [3 + i*3 for i in hours])  # Modify x-axis ticks
-        
-        plt.yticks(np.arange(min(temps), max(temps)+1, 5))
-        plt.legend(['Temperature'], loc='upper right')
-        
-        plt.show()
-        
+        else:
+            print("Weather temps every three hours, for next five days: \n",temps)
+        print("\n")
     except:
         return "City not found, please try again."
-    
-# todo, ll version
 
-# print(get_todays_forecast_ll(40.7128, -74.0060))
-# print(get_todays_forecast_city("New York"))
-#print(display_fiveday_temps_city("New York"))
+def get_today_airqual_city(city):
+    """
+    Retrieve today's air quality for a specificied city.
+    """
+    try:
+        geo = f"http://api.openweathermap.org/geo/1.0/direct?q={city}&appid={api_key}"
+        geo_data = requests.get(geo).json()
+        lat, long = geo_data[0]["lat"], geo_data[0]["lon"]
+        url = f"http://api.openweathermap.org/data/2.5/air_pollution?lat={lat}&lon={long}&appid={api_key}"
+        airquality_data = requests.get(url).json()
+        air = airquality_data["list"][0]["main"]["aqi"]
+        names = {1: "Good", 2: "Fair", 3: "Moderate", 4: "Poor", 5: "Very Poor"}
+        give_extra = input("Would you like to see extra air quality details? (y/n): ")
+        if give_extra.lower() == "y":
+            extra = f'\nCO: {airquality_data["list"][0]["components"]["co"]} µg/m³\nNO: {airquality_data["list"][0]["components"]["no"]} µg/m³\nNO2: {airquality_data["list"][0]["components"]["no2"]} µg/m³\nO3: {airquality_data["list"][0]["components"]["o3"]} µg/m³\nSO2: {airquality_data["list"][0]["components"]["so2"]} µg/m³\nPM2.5: {airquality_data["list"][0]["components"]["pm2_5"]} µg/m³\nPM10: {airquality_data["list"][0]["components"]["pm10"]} µg/m³\nNH3: {airquality_data["list"][0]["components"]["nh3"]} µg/m³\n'
+        else:
+            extra = ""
+        return f'City: {geo_data[0]["name"]} \nAir Quality: {names[air]} ({air})\n{extra}'
+    except:
+        return "City not found, please try again."
+

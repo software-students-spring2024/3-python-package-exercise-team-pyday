@@ -1,6 +1,8 @@
-import os
-from src.pyweath import WeatherAPI
+#import os
+from src.pyweath import *
+import pytest
 
+#todo
 def test_get_current_weather():
     api_key = os.getenv('OPENWEATHERMAP_API_KEY')
     assert api_key is not None, "API key must be set as environment variable"
