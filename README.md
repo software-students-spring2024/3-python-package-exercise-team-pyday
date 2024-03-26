@@ -1,8 +1,10 @@
+![Python build & test](https://github.com/nyu-software-engineering/python-package-example/actions/workflows/build.yaml/badge.svg)
+
 # PyWeath
 
-## Setup
+## Docs
 
-### Getting an API Key
+<!-- ### Getting an API Key
 
 1. Sign up for the free version of an OpenWeatherMap account and obtain an API key.
 2. Set an environment variable on your system to store this key:
@@ -13,4 +15,8 @@
 ### Configuring the Project
 
 1. Clone the repository and navigate to the project directory.
-2. (If using a `.env` file for local development) Create a `.env` file in the root directory and add `OPENWEATHERMAP_API_KEY=your_api_key_here`. Make sure `.env` is listed in your `.gitignore` file to prevent it from being committed.
+2. (If using a `.env` file for local development) Create a `.env` file in the root directory and add `OPENWEATHERMAP_API_KEY=your_api_key_here`. Make sure `.env` is listed in your `.gitignore` file to prevent it from being committed. -->
+
+## Contributors
+- [Sang In (Harry) Kang](https://github.com/sik247)
+- [Jean Luis Adrover](https://github.com/jladrover)

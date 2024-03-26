@@ -7,6 +7,9 @@ name = "pypi"
 pytest = "*"
 build = "*"
 requests = "*"
+matplotlib.pyplot = "*"
+numpy = "*"
+pyweath = {file = ".", editable = true}
 
 [dev-packages]
 
