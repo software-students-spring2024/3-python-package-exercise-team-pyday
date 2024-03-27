@@ -7,7 +7,7 @@ name = "pypi"
 pytest = "*"
 build = "*"
 requests = "*"
-matplotlib = "*"
+matplotlib.pyplot = "*"
 numpy = "*"
 pyweath = {editable = true, path = "."}
 
