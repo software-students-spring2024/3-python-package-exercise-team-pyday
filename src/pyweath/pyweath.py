@@ -3,7 +3,6 @@ import matplotlib.pyplot as plt
 from dotenv import load_dotenv
 import numpy as np
 
-load_dotenv()
 
 api_key = os.getenv('API_KEY')
 base_url = "http://api.openweathermap.org/data/2.5/"
