@@ -4,11 +4,11 @@
 
 # PyWeath
 
-PyWeath is a Python package designed for developers looking to integrate weather forecasting features into their applications. Using the OpenWeatherMap API, PyWeath provides access to current weather conditions, air quality data, and a five day weather forecast for any location specified by city name or latitude/longitude.
+PyWeath is a Python package designed for developers looking to integrate weather forecasting features into their applications. Using the OpenWeatherMap API, PyWeath provides access to current weather conditions, air quality data, and a five day weather forecast for any location specified by city name or latitude/longitude position.
 
 ## Docs
 
-### get_todays_forecast_ll(lat:float, lon:float)
+### get_todays_forecast_ll(lat, lon)
 *Retrieves today's weather forecast based on latitude and longitude.*
 
 <!-- 
