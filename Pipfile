@@ -9,8 +9,6 @@ build = "*"
 requests = "*"
 matplotlib = "*"
 numpy = "*"
-dotenv = "*"
-pyweath = {file = ".", editable = true}
 
 
 [requires]
