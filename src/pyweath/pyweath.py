@@ -9,7 +9,7 @@ base_url = "http://api.openweathermap.org/data/2.5/"
 
 def get_todays_forecast_ll(lat, lon):
     """
-    Retrieve today's weather forecast for a specific longitude/latitude position.
+    Retrieve today's weather forecast for a specific longitude/latitude position, can accept str/float vals.
     """
     try:
         url = f"{base_url}weather?lat={lat}&lon={lon}&appid={api_key}&units=metric"
@@ -48,7 +48,7 @@ def fiveday_forecast_city(city):
             plt.grid(True, linestyle='--', alpha=0.5)
             plt.xlabel('Hours from current time (5-days)', fontsize=12)  
             plt.ylabel('Temperature (°C)', fontsize=12)
-            plt.title('Temperature Changes Over Next 5 Day Forecast', fontsize=14) 
+            plt.title(f'Temperature Changes Over Next 5 Days in {city}', fontsize=14) 
             hours = np.arange(0, len(temps), 3)  # show ticks every 3 hours
             plt.xticks(hours, [3 + i*3 for i in hours])  
             
@@ -56,10 +56,14 @@ def fiveday_forecast_city(city):
             plt.legend(['Temperature'], loc='upper right')
             
             plt.show()
-        
+            close = input("To close the graph, press enter: ")
+            # if close == "":
+            #     plt.close()
+            return "Graph displayed. \n" 
         else:
-            print("Weather temps every three hours, for next five days: \n",temps)
-        print("\n")
+            print("Temperatures for the next 5 days: ")
+            return(temps)
+        
     except:
         return "City not found, please try again."
 
@@ -73,6 +77,7 @@ def get_today_airqual_city(city):
         lat, long = geo_data[0]["lat"], geo_data[0]["lon"]
         url = f"http://api.openweathermap.org/data/2.5/air_pollution?lat={lat}&lon={long}&appid={api_key}"
         airquality_data = requests.get(url).json()
+        print(airquality_data)
         air = airquality_data["list"][0]["main"]["aqi"]
         names = {1: "Good", 2: "Fair", 3: "Moderate", 4: "Poor", 5: "Very Poor"}
         give_extra = input("Would you like to see extra air quality details? (y/n): ")
