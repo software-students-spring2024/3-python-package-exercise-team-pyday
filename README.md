@@ -30,7 +30,7 @@ For more: [example python program](https://github.com/software-students-spring20
 ### fiveday_forecast_city(city)
 *Retrieves five day weather forecast graph or list of temperatures for a specificied city, based off user input, outputs graph or list of strings.*
 
-Example_
+Example:
 ```py
 fiveday_forecast_city("Dubai")
 Would you like to see the graph? (y/n): n
@@ -49,7 +49,26 @@ Would you like to see extra air quality details? (y/n): y
 For more: [example python program](https://github.com/software-students-spring2024/3-python-package-exercise-team-pyday/blob/main/example.py)
 
 
-## Installing
+## Installation & Use
+
+If using the package in your own python program:
+
+1. Make a pipenv (managed virtual environment) and install latest version of pyweath via: ```pipenv install -i https://test.pypi.org/simple/pyweath==0.0.1.``` **Note:** If you've previously created a pipenv virtual environment in the same directory, you may have to delete the old one first. Find out where it is located with the pipenv --venv command. For more information see: https://pipenv.pypa.io/en/latest/ 
+2. Enter the virtual environment: ```pipenv shell```.
+3. Create a Python file (ex: ```my_program.py```). In the file, import pyweath to utilize its features (ex: ```from pyweath import *```). For more: [example python program](https://github.com/software-students-spring2024/3-python-package-exercise-team-pyday/blob/main/example.py)
+4. Run the program in terminal: ```python3 my_program.py.```
+5. Close virtual environment when done: ```exit```
+
+
+
+Exit the virtual environment: exit.
+
+If using the package directly in terminal:
+
+1. Create and enter a pipenv virtual environment as seen above in steps 1 & 2.
+2. Run our package directly from the command line: ```python3 -m examplepackagefb1258```. This should run the code located inside ```__main__.py```, in the src folder.
+3. Close virtual environment when done: ```exit```
+
 
 ## Contributing
 
