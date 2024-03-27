@@ -72,8 +72,11 @@ If using the package directly in terminal:
 
 ## Contributing
 
-
-
+1. Clone this repo ```git clone https://github.com/software-students-spring2024/3-python-package-exercise-team-pyday```
+2. Create and enter virtual environment as seen above. 
+3. Install package: ```pipenv install pyweath```
+5. Install the necessary dependencies: ```pipenv install pytest build twine requests matplotlib numpy```
+6. If you wish to run the unit tests provided: ```pytest```
 ## Contributors
 - [Sang In (Harry) Kang](https://github.com/sik247)
 - [Jean Luis Adrover](https://github.com/jladrover)
