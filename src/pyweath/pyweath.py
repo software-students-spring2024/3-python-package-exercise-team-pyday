@@ -56,7 +56,7 @@ def fiveday_forecast_city(city):
             plt.legend(['Temperature'], loc='upper right')
             
             plt.show()
-            close = input("To close the graph, press enter: ")
+            #close = input("To close the graph, press enter: ")
             # if close == "":
             #     plt.close()
             return "Graph displayed. \n" 
