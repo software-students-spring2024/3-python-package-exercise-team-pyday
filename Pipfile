@@ -9,7 +9,9 @@ build = "*"
 requests = "*"
 matplotlib = "*"
 numpy = "*"
+pyweath = {editable = true, path = "."}
 
+[dev-packages]
 
 [requires]
 python_version = "3"

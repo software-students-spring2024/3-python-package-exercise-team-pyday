@@ -1,6 +1,5 @@
 import requests, os
 import matplotlib.pyplot as plt
-from dotenv import load_dotenv
 import numpy as np
 
 
