@@ -1,9 +1,9 @@
-from .pyweath import *
+from src.pyweath.pyweath import *
 
 def main():
     try:
         example_lat, example_lon = input("Enter latitude and longitude separated by a comma: ").split(",")
-        print(get_todays_forecast_ll(example_lat, example_lon))
+        print(get_todays_forecast_ll(float(example_lat), float(example_lon)))
     except:
         print("Invalid input.")
 
