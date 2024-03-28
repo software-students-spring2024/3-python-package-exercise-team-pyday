@@ -54,7 +54,7 @@ For more: [example python program](https://github.com/software-students-spring20
 If using the package in your own python program:
 
 
-1. Make a pipenv (managed virtual environment) and install latest version of pyweath via: ```pipenv install -i https://test.pypi.org/pyweath==1.0.0.``` **Note:** If you've previously created a pipenv virtual environment in the same directory, you may have to delete the old one first. Find out where it is located with the pipenv --venv command. For more information see: https://pipenv.pypa.io/en/latest/.
+1. Make a pipenv (managed virtual environment) and install latest version of pyweath via: ```pipenv install pyweath``` **Note:** If you've previously created a pipenv virtual environment in the same directory, you may have to delete the old one first. Find out where it is located with the pipenv --venv command. For more information see: https://pipenv.pypa.io/en/latest/.
 2. Enter the virtual environment: ```pipenv shell```
 3. Create a Python file (ex: ```my_program.py```). In the file, import pyweath to utilize its features (ex: ```from pyweath import *```). For more: [example python program](https://github.com/software-students-spring2024/3-python-package-exercise-team-pyday/blob/main/example.py).
 4. Run the program in terminal: ```python3 my_program.py.```
