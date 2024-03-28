@@ -42,7 +42,7 @@ def fiveday_forecast_city(city):
         
         see_graph = input("Would you like to see the graph? (y/n): ")
         if see_graph.lower() == "y":
-            plt.figure(figsize=(10, 6))  
+            fig = plt.figure(figsize=(10, 6))  
             
             plt.plot(temps, color='blue', linestyle='-', linewidth=2)
             plt.grid(True, linestyle='--', alpha=0.5)
@@ -56,9 +56,7 @@ def fiveday_forecast_city(city):
             plt.legend(['Temperature'], loc='upper right')
             
             plt.show()
-            #close = input("To close the graph, press enter: ")
-            # if close == "":
-            #     plt.close()
+            plt.close(fig)
             return "Graph displayed. \n" 
         else:
             print("Temperatures for the next 5 days: ")
@@ -77,7 +75,6 @@ def get_today_airqual_city(city):
         lat, long = geo_data[0]["lat"], geo_data[0]["lon"]
         url = f"http://api.openweathermap.org/data/2.5/air_pollution?lat={lat}&lon={long}&appid={api_key}"
         airquality_data = requests.get(url).json()
-        print(airquality_data)
         air = airquality_data["list"][0]["main"]["aqi"]
         names = {1: "Good", 2: "Fair", 3: "Moderate", 4: "Poor", 5: "Very Poor"}
         give_extra = input("Would you like to see extra air quality details? (y/n): ")
